@@ -18,9 +18,9 @@ function MyRecipeComponent({label, image, calories, ingredients, cuisineType, fu
                 </li>
             ))}
         </ul>
-        
-            <p className=''>To see the full recipe, copy the link into your browser window:</p>
-            <p>{full}</p>
+
+            <a href={full} target="_blank" rel="noreferrer" className='reference'>Click to see the full recipe</a>
+
                
     </div>)
 }

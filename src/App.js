@@ -3,6 +3,7 @@ import MyRecipesComponent from './MyRecipesComponent';
 import './App.css';
 import video from './orange.mp4';
 import picture from './search.png';
+import image from './help.png';
 
 
 function App() {
@@ -32,20 +33,26 @@ const finalSearch = (e) => {
   e.preventDefault();
   setWordSubmitted(mySearch);
 }
+
  return(
   <div className='App'>
     <div className='container'>
-      <video autoPlay muted loop>
+      <video autoPlay muted>
         <source src={video} type="video/mp4" />
       </video>
       <h1>Find a Recipe</h1>
+      
     </div>
 
-  <div className='container'>
+  <div className='container find'>
     <form onSubmit={finalSearch}>
       <input className='search' placeholder='Search...' onChange={myRecipeSearch} value={mySearch}></input>
-      <button><img src={picture} alt="foto" className='icons'/></button>
+      <button><img src={picture}  alt="foto" className='icon'/></button>
     </form>
+    <div className='container'>
+      <img src={image} width="32px" height="32px" alt="icon" className='icons' />
+      <p className='instruction'>Enter one or more ingredients separated by a space</p>
+    </div>
    </div> 
 
   <div>
@@ -57,7 +64,7 @@ const finalSearch = (e) => {
     calories={element.recipe.calories}
     ingredients={element.recipe.ingredientLines}
     cuisineType={element.recipe.cuisineType}
-    full = {element.recipe.url}/>
+    full = {element.recipe.url} />
   ))}
   </div>
   </div>
